@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<body style="background-color:#ccffcc">
+<center>
+<div style="width:65%; border:1px solid; border-color:#cccccc; padding:20px 30px; background-color:#f4ffd6">
+<h1>Forum</h1>
+{{for category in rows:}}
+<div class="well">
+    {{=A(category.name.title(), _href=URL('list_posts_by_datetime',args=category.name))}}
+</div>
+
+{{pass}}

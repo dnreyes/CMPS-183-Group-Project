@@ -1,0 +1,12 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+<body style="background-color:#ccffcc">
+<center>
+<div style="width:65%; border:1px solid; border-color:#cccccc; padding:20px 30px; background-color:#f4ffd6">
+<h1>Member List</h1>
+
+{{=form}}
+
+<p>
+{{=A('Create a profile', _class='btn', _href=URL('default', 'add_profile'))}}
+</p>

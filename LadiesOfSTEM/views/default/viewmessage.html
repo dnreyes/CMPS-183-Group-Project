@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+<body style="background-color:#ccffcc">
+<center>
+<div style="width:65%; border:1px solid; border-color:#cccccc; padding:20px 30px; background-color:#f4ffd6">
+<h1>Inbox</h1>
+{{=form}}
+{{=A('Send Message',_class='btn btn-primary',_href=URL('default', 'sendmessage'))}}

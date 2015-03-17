@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+<body style="background-color:#ccffcc">
+<center>
+<div style="width:65%; border:1px solid; border-color:#cccccc; padding:20px 30px; background-color:#f4ffd6">
+<div class="well">
+<h2>{{=post.title}}</h2>
+    
+<p><big>{{=post.body}}</big></p>
+<p><h5><small>{{=prettydate(post.created_on)}} by {{=author(post.created_by)}}</small></h5></p>
+<p>{{if post.created_by == auth.user_id:}}
+    {{=A('Edit this post',_class="btn btn-info",_href=URL('edit_post',args=post.id))}}
+{{pass}}</p>
+</div>
+
+{{for comment in comments:}}
+<div class="well">
+    <h5><small>{{=prettydate(comment.created_on)}} {{=author(comment.created_by)}} said:</small></h5>{{=comment.body}}
+</div>
+{{pass}}
+
+<h4>Post a reply</h4>
+{{=form}}
+{{=A('Back', _class="btn btn-info", _href=URL('default', 'list_posts_by_datetime', args=post.category.name))}}
+{{pass}}

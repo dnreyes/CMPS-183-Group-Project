@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+<body style="background-color:#ccffcc">
+<center>
+<div style="width:65%; border:1px solid; border-color:#cccccc; padding:20px 30px; background-color:#f4ffd6">
+<h1>{{=category.name.title()}}</h1>
+<p>
+{{=A('Post a New Topic',_class='btn btn-primary',_href=URL('create_post',args=category.name))}}
+</p>
+
+{{for post in rows:}}
+<div class = "well">
+    <table>
+        <tr><td><strong>{{=A(post.title, _href=URL('view_post',args=post.id))}}</strong></td></tr>
+    </table>
+</div>
+{{pass}}
+
+{{if page>0:}}
+{{=A('previous',_class='btn',_href=URL(args=(category.name,page-1)))}}
+{{pass}}
+
+{{if len(rows)>5:}}
+{{=A('next',_class='btn',_href=URL(args=(category.name,page+1)))}}
+{{pass}}
+{{=A('Back to Forums', _class='btn', _href=URL('forum'))}}
