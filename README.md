@@ -1,4 +1,4 @@
-# Ladies Of Stem
+# Ladies Of STEM
 Developed by Delmy Reyes, Kristina Cosfol, and Rachael Lew
 
 Ladies Of Stem is an online mentoring website for women in STEM fields.
